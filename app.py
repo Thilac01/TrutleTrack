@@ -34,7 +34,8 @@ def main(page: ft.Page):
 
     def open_sidebar(e):
         """Opens the sidebar menu."""
-        print("Sidebar Clicked!")
+        sidebar.visible = not sidebar.visible
+        page.update()
 
     def show_contacts(e):
         """Replaces the main view with a contacts list."""
@@ -100,14 +101,14 @@ def main(page: ft.Page):
                     ],
                     alignment=ft.MainAxisAlignment.START,
                 ),
-                ft.ListTile(leading=ft.Icon(ft.icons.PERSON), title=ft.Text("Alice"), subtitle=ft.Text("Online"),
-                            on_click=lambda e: show_chat("Alice")),
-                ft.ListTile(leading=ft.Icon(ft.icons.PERSON), title=ft.Text("Bob"), subtitle=ft.Text("Offline"),
-                            on_click=lambda e: show_chat("Bob")),
-                ft.ListTile(leading=ft.Icon(ft.icons.PERSON), title=ft.Text("Charlie"), subtitle=ft.Text("Busy"),
-                            on_click=lambda e: show_chat("Charlie")),
-                ft.ListTile(leading=ft.Icon(ft.icons.PERSON), title=ft.Text("David"), subtitle=ft.Text("Away"),
-                            on_click=lambda e: show_chat("David")),
+                ft.ListTile(leading=ft.Icon(ft.icons.PERSON), title=ft.Text("Daniel"), subtitle=ft.Text("Online"),
+                            on_click=lambda e: show_chat("Daniel")),
+                ft.ListTile(leading=ft.Icon(ft.icons.PERSON), title=ft.Text("Rashad"), subtitle=ft.Text("Offline"),
+                            on_click=lambda e: show_chat("Rashad")),
+                ft.ListTile(leading=ft.Icon(ft.icons.PERSON), title=ft.Text("Immaath"), subtitle=ft.Text("Busy"),
+                            on_click=lambda e: show_chat("Immaath")),
+                ft.ListTile(leading=ft.Icon(ft.icons.PERSON), title=ft.Text("Bhavinthan"), subtitle=ft.Text("Away"),
+                            on_click=lambda e: show_chat("Bhavinthan")),
             ]
         )
 
@@ -122,10 +123,10 @@ def main(page: ft.Page):
         update_chat(contact_name)
 
     contact_messages = {
-        "Alice": [{"sender": "Alice", "message": "Hey, how are you?"}, {"sender": "You", "message": "I'm good, thanks!"}],
-        "Bob": [{"sender": "Bob", "message": "Did you finish the report?"}, {"sender": "You", "message": "Almost done."}],
-        "Charlie": [{"sender": "Charlie", "message": "Let's meet for lunch."}, {"sender": "You", "message": "Sure!"}],
-        "David": [{"sender": "David", "message": "Can you help me with the project?"}, {"sender": "You", "message": "Of course!"}],
+        "Daniel": [{"sender": "Daniel", "message": "Hey, how are you?"}, {"sender": "You", "message": "I'm good, thanks!"}],
+        "Rashad": [{"sender": "Rashad", "message": "Did you finish the report?"}, {"sender": "You", "message": "Almost done."}],
+        "Immaath": [{"sender": "Immaath", "message": "Let's meet for lunch."}, {"sender": "You", "message": "Sure!"}],
+        "Bhavinthan": [{"sender": "Bhavinthan", "message": "Can you help me with the project?"}, {"sender": "You", "message": "Of course!"}],
     }
 
     map_component = map.Map(
@@ -238,10 +239,26 @@ def main(page: ft.Page):
                 border_radius=10,
                 on_click=lambda e: print("Map Container clicked!"),
             ),
-            create_message_card("Bob", "The coral restoration is looking great.", "5 minutes ago"),
-            create_message_card("Alice", "Excited to see more turtles this season!", "2 minutes ago"),
+            create_message_card("Rashad", "The coral restoration is looking great.", "5 minutes ago"),
+            create_message_card("Daniel", "Excited to see more turtles this season!", "2 minutes ago"),
         ])
 
+    # Sidebar
+    sidebar = ft.Container(
+        content=ft.Column(
+            [
+                ft.IconButton(icon=ft.icons.CLOSE, tooltip="Close Sidebar", on_click=open_sidebar),
+                ft.ListTile(leading=ft.Icon(ft.icons.PERSON), title=ft.Text("Profile"), on_click=lambda e: print("Profile clicked")),
+                ft.ListTile(leading=ft.Icon(ft.icons.SETTINGS), title=ft.Text("Settings"), on_click=lambda e: print("Settings clicked")),
+            ]
+        ),
+        width=200,
+        bgcolor=ft.colors.BLUE_600,
+        visible=False,
+        padding=10,
+    )
+
+    # Main content
     load_main_content()  # Load the initial main content
 
     main_container = ft.Container(
@@ -256,6 +273,6 @@ def main(page: ft.Page):
         on_click=lambda e: print("Main Container clicked!"),
     )
 
-    page.add(main_container)
+    page.add(main_container, sidebar)
 
 ft.app(target=main)
