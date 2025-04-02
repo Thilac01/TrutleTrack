@@ -25,9 +25,7 @@ to run this
 ```
 flet run app.py
 ```
-
-![app4](https://github.com/user-attachments/assets/d8823780-b3bd-4d0a-88ce-a7dd3400960a)
-![app3](https://github.com/user-attachments/assets/dbc54865-1018-45a2-98c3-9f2f9e2deb29)
-![app2](https://github.com/user-attachments/assets/b3a4a6ec-8547-42d7-a92e-f84d947f8824)
 ![app](https://github.com/user-attachments/assets/e0a17601-9239-4f25-807d-657b43954ae5)
-
+![app2](https://github.com/user-attachments/assets/b3a4a6ec-8547-42d7-a92e-f84d947f8824)
+![app3](https://github.com/user-attachments/assets/dbc54865-1018-45a2-98c3-9f2f9e2deb29)
+![app4](https://github.com/user-attachments/assets/d8823780-b3bd-4d0a-88ce-a7dd3400960a)
