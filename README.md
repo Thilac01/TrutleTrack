@@ -23,7 +23,7 @@ pip install flet
 
 to run this 
 ```
-flet run app.py!
+flet run login.py!
 
 ```
 ![Screenshot 2025-04-03 144513](https://github.com/user-attachments/assets/944e2852-f21f-4d71-a5bc-a5bf97d92524)
