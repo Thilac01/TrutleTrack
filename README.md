@@ -26,6 +26,8 @@ to run this
 flet run app.py!
 
 ```
+![Screenshot 2025-04-03 144513](https://github.com/user-attachments/assets/944e2852-f21f-4d71-a5bc-a5bf97d92524)
+![Screenshot 2025-04-03 144630](https://github.com/user-attachments/assets/22e3bad8-72b8-44ac-88be-1995b45b07e2)
 
 [Screenshot 2025-04-03 144630](https://github.com/user-attachments/assets/a24f8ae5-b6a2-40a9-aa7a-fd7b46528b48)
 ![Screenshot 2025-04-03 144557](https://github.com/user-attachments/assets/9403573e-fad2-4682-9b63-4cbabc94fab0)
